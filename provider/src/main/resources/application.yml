@@ -1,0 +1,8 @@
+dubbo:
+  application:
+    name: dubbo-demo-provider
+  registry:
+    address: 127.0.0.1:2181
+server:
+  port: 8089
+

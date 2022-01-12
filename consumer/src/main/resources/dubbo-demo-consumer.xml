@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="${dubbo.application.name}" owner="rest"   organization="dubbox"/>
+
+    <!-- 注册中心服务地址 -->
+    <dubbo:registry  protocol="zookeeper" address="${dubbo.registry.address}" file="/NPCDATAS/AAS-V9.0/domains/dbfw/.dubbo/rest.cache"/>
+    <dubbo:consumer check="false" timeout="100000" filter="userId"/>
+    <!-- 使用注解方式-->
+    <dubbo:annotation package="com.css"/>
+
+</beans>
